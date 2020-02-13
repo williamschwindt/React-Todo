@@ -18,13 +18,14 @@ class TodoForm extends React.Component {
         e.preventDefault();
 
         this.props.addItem(e, this.state.item);
+        document.querySelector("form").reset();
     };
 
     render() {
         return(
             <form onSubmit={this.handleSumbit}>
                 <input type="text" name="item" onChange={this.handleChange} />
-                <button>Add</button>
+                <button className="button">Add</button>
             </form>
         );
     };

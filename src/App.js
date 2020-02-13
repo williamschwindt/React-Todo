@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
-import Todo from './components/TodoComponents/Todo';
+import './index.css';
 
 let todoItems = [
   {
@@ -57,14 +57,14 @@ class App extends React.Component {
     e.preventDefault();
 
     this.setState({
-      todoItems: this.state.todoItems.filter(item => item.purchased === false)
+      todoItems: this.state.todoItems.filter(item => item.complete === false)
     });
   }
   
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <div className="app">
+        <h1>Your Todo List</h1>
         <TodoForm addItem={this.addItem} />
 
         <div>
